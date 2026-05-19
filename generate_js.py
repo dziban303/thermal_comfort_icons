@@ -75,6 +75,7 @@ template = Template(
 async function getIcon(name) {
   return TC_ICONS_MAP[name];
 }
+
 async function getIconList() {
   return Object.entries(TC_ICONS_MAP).map(([icon, content]) => ({
     name: icon,
