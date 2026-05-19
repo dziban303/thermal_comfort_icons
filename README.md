@@ -6,52 +6,66 @@ Official icon pack designed for [Thermal Comfort](https://github.com/dolezsa/the
 ## Temperatures
 
 ### Heat Index
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/thermometer-fire.svg) `heat-index`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/thermometer-fire.svg) `heat-index`
 
 ### Dew Point
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/thermometer-water.svg) `dew-point`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/thermometer-water.svg) `dew-point`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/thermometer-water-opacity.svg) `dew-point-alternative`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/thermometer-water-opacity.svg) `dew-point-alternative`
 
 ### Frost Point
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/thermometer-snowflake.svg) `frost-point`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/thermometer-snowflake.svg) `frost-point`
 
 ### Simmer Index
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/thermometer-power-sleep.svg) `simmer-index`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/thermometer-power-sleep.svg) `simmer-index`
 
 ## Perception
 
 ### Thermal Perception
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/hand-thermometer.svg) `thermal-perception-hand`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/hand-thermometer.svg) `thermal-perception-hand`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/hand-thermometer-sun.svg) `thermal-perception-hand-alternative`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/hand-thermometer-sun.svg) `thermal-perception-hand-alternative`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/hand-thermometer-water.svg) `dew-point-perception-hand`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/hand-thermometer-water.svg) `dew-point-perception-hand`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/hand-thermometer-fire.svg) `heat-point-perception-hand`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/hand-thermometer-fire.svg) `heat-point-perception-hand`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/human-male-thermometer.svg) `thermal-perception`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/human-male-thermometer.svg) `thermal-perception`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/human-male-thermometer-sun.svg) `thermal-perception-alternative`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/human-male-thermometer-sun.svg) `thermal-perception-alternative`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/human-male-thermometer-water.svg) `dew-point-perception`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/human-male-thermometer-water.svg) `dew-point-perception`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/human-male-thermometer-fire.svg) `heat-point-perception`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/human-male-thermometer-fire.svg) `heat-point-perception`
 
 ### Simmer Zone
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/hand-thermometer-power-sleep.svg) `simmer-zone`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/hand-thermometer-power-sleep.svg) `simmer-zone`
 
-![Preview](https://raw.githubusercontent.com/rautesamtr/thermal_comfort_icons/master/svg/human-male-thermometer-power-sleep.svg) `simmer-zone-human`
+![Preview](https://raw.githubusercontent.com/dziban303/thermal_comfort_icons/master/svg/human-male-thermometer-power-sleep.svg) `simmer-zone-human`
 
 ## Install
 
 ### Using HACS (recommended)
-This plugin can be installed using HACS. To do it search for Thermal Comfort Icons in the frontend section.
+This icon pack can be installed using HACS. After installation, add the JavaScript resource to your Lovelace configuration:
+
+```yaml
+resources:
+  - type: module
+    url: /hacsfiles/dziban303/thermal_comfort_icons/thermal_comfort_icons.js
+```
+
+If you use `configuration.yaml`, use the new module URL in the `frontend` section:
+
+```yaml
+frontend:
+  extra_module_url:
+    - /hacsfiles/dziban303/thermal_comfort_icons/thermal_comfort_icons.js
+```
 
 ### Manual
-Copy the `thermal_comfort_icons.js` file into `<config>/www/` where `<config>` is your home-assistant config directory (the directory where your `configuration.yaml` resides).
+Copy the `thermal_comfort_icons.js` file into `<config>/www/` where `<config>` is your Home Assistant config directory (the directory where your `configuration.yaml` resides).
 
-Add the following to the `frontend` section of your `configuration.yaml`
+Add the following to the `frontend` section of your `configuration.yaml`:
 
 ```yaml
 frontend:
@@ -59,15 +73,15 @@ frontend:
     - /local/thermal_comfort_icons.js
 ```
 
-Or add the following to your lovelace configuration using the Raw Config editor under Configure UI or ui-lovelace.yaml if using YAML mode.
+Or add the following to your Lovelace raw configuration editor, or `ui-lovelace.yaml` in YAML mode:
 
 ```yaml
 resources:
-  - type: js
+  - type: module
     url: /local/thermal_comfort_icons.js
 ```
 
-Restart home-assistant.
+Restart Home Assistant.
 
 ## Using
 
