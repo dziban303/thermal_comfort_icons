@@ -1,4 +1,8 @@
 {
     "name": "Thermal Comfort Icon Pack",
-    "render_readme": true
+    "render_readme": true,
+    "content_in_root": false,
+    "filename": "dist/thermal_comfort_icons.js",
+    "zip_release": false,
+    "domains": ["frontend"]
 }
