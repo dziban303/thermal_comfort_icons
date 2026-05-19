@@ -19,6 +19,11 @@ def get_id(dom: Document) -> str:
     return dom.getElementsByTagName(SVG)[0].getAttribute("id")
 
 
+def get_viewbox(dom: Document) -> str:
+    """Get the viewBox of the svg file."""
+    return dom.getElementsByTagName(SVG)[0].getAttribute("viewBox")
+
+
 def get_keywords(dom: Document) -> str:
     """Get the keywords of the svg file."""
     desc_tags = dom.getElementsByTagName("desc")
@@ -33,6 +38,7 @@ doms = [parse(file) for file in glob(os.path.join(SVG, f"*.{SVG}"))]
 icons = {
     get_id(dom): {
         "path": get_path(dom),
+        "viewBox": get_viewbox(dom),
         "keywords": get_keywords(dom),
     }
     for dom in doms
@@ -42,8 +48,14 @@ template = Template(
     """const TC_ICONS_MAP = $icons;
 
 async function getIcon(name) {
-  return {path: TC_ICONS_MAP[name]?.path};
+  const icon = TC_ICONS_MAP[name];
+  if (!icon) return null;
+  return {
+    path: icon.path,
+    viewBox: icon.viewBox || "0 0 24 24"
+  };
 }
+
 async function getIconList() {
   return Object.entries(TC_ICONS_MAP).map(([icon, content]) => ({
     name: icon,
